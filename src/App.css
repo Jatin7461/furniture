@@ -37,6 +37,7 @@ body {
   line-height: 14vw;
   margin: 0;
   margin-left: 2%;
+
 }
 
 .second {
@@ -53,6 +54,12 @@ body {
   margin-top: 50px;
   color: white;
   font-style: italic;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.archive .line {
+
+  transform: translateY(25px);
 }
 
 
@@ -103,14 +110,21 @@ body {
   margin-bottom: 300px;
 }
 
-.third .text {
+.third .thirdText {
   font-size: 4vw;
   line-height: 4vw;
   margin-left: 2%;
   text-transform: uppercase;
-  display: flex;
-  transform: translateY(70px);
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+.third .thirdText .line {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.third .thirdText .word {
+  transform: translateY(3.5vw);
 }
 
 .studio {
@@ -146,9 +160,26 @@ body {
   display: inline-block !important;
 }
 
-.canvas{
+.canvas {
   height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
+}
+
+
+.heading .line {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.heading .word {
+  transform: translateY(250px);
+}
+
+.middleText .line {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.middleText .word {
+  transform: translateY(25px);
 }

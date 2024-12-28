@@ -10,17 +10,39 @@ import gsap from 'gsap';
 import SplitType from 'split-type';
 import { Canvas } from '@react-three/fiber';
 import Scene from './Components/Scene';
+import { ScrollTrigger } from 'gsap/all';
 function App() {
 
   const container: RefObject<HTMLDivElement> = React.createRef()
 
   useGSAP(() => {
 
-    const text = new SplitType('.third .text', { types: 'lines', lineClass: "char" })
-
-    gsap.to(text.chars, {
+    const firstHeading = new SplitType('.heading')
+    const middleText = new SplitType('.middleText')
+    const archiveText = new SplitType('.archive')
+    const thirdText = new SplitType('.thirdText')
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.to(thirdText.words, {
       translateY: 0,
       duration: 1
+    })
+
+    gsap.to(firstHeading.words, {
+      translateY: 0,
+      duration: 1,
+      delay: 0.3
+    })
+
+    gsap.to(archiveText.lines, {
+      translateY: 0,
+      duration: 1,
+      delay: 0.3
+    })
+
+    gsap.to(middleText.words, {
+      translateY: 0,
+      duration: 1,
+      delay: 0.3
     })
 
   }, { scope: container })

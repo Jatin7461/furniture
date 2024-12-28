@@ -1,7 +1,7 @@
 const Third = () => {
     return <div className="third">
 
-        <p className="text">we're an italian, spanish and swish multidisciplinary design studio focused on interior deskgn, installations, digital imagery and meta-space research.</p>
+        <p className="thirdText">we're an italian, spanish and swish multidisciplinary design studio focused on interior deskgn, installations, digital imagery and meta-space research.</p>
         <div className="studio">
 
             <p>STUDIO</p>
