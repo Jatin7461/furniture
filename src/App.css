@@ -127,15 +127,27 @@ body {
   transform: translateY(3.5vw);
 }
 
+.studio .line {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.studio .word {
+  transform: translateY(1vw);
+}
+
 .studio {
-  display: flex;
   margin-left: 4%;
-  gap: 100px;
   font-size: 0.8vw;
   margin-bottom: 4px;
 }
 
-.studio2 {
+.studio .line {
+  display: flex !important;
+  gap: 100px;
+
+}
+
+.studio2 .line {
   gap: 108px;
 }
 
@@ -154,6 +166,16 @@ body {
   align-items: end;
   font-size: 0.7vw;
   padding-bottom: 25px;
+}
+
+.left .line,
+.right .line {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.left .word,
+.right .word {
+  transform: translateY(0.8vw)
 }
 
 .char {

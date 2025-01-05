@@ -21,10 +21,51 @@ function App() {
     const middleText = new SplitType('.middleText')
     const archiveText = new SplitType('.archive')
     const thirdText = new SplitType('.thirdText')
+    const studioText = new SplitType('.studio')
+    // const fourthText = new SplitType('.fourth')
+    const fourthLeftText = new SplitType('.left')
+    const fourthRightText = new SplitType('.fourth .right')
     gsap.registerPlugin(ScrollTrigger)
-    gsap.to(thirdText.words, {
+
+    gsap.to(studioText.words, {
       translateY: 0,
-      duration: 1
+      duration: 1,
+      scrollTrigger: {
+        trigger: '.studio2',
+        start: 'bottom bottom',
+        markers: true
+      }
+    })
+
+    gsap.to([fourthLeftText.words, fourthRightText.words], {
+      translateY: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: '.fourth',
+        start: 'top bottom'
+      }
+    })
+
+    gsap.to([thirdText.words], {
+      translateY: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: '.thirdText',
+        start: 'top 50%',
+        // end: 'bottom top',
+        onEnter: () => {
+          console.log('on enter')
+        },
+        onLeave: () => {
+          console.log('on leave')
+        },
+        onEnterBack: () => {
+          console.log('on enter back')
+        },
+        onLeaveBack: () => {
+          console.log('on leave back')
+        }
+      }
     })
 
     gsap.to(firstHeading.words, {
