@@ -29,9 +29,9 @@ const Chair = (props) => {
     })
 
     window.addEventListener('scroll', () => {
-        chairRef.current.rotation.x += 0.02
-        chairRef.current.rotation.y += 0.02
-        chairRef.current.rotation.z += 0.02
+        chairRef.current.rotation.x += 0.015
+        chairRef.current.rotation.y += 0.015
+        chairRef.current.rotation.z += 0.015
     })
 
     return (

@@ -82,9 +82,36 @@ body {
   line-height: 5vw;
 }
 
+.chair-name .line {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.chair-name .word {
+  transform: translateY(5vw);
+}
+
 .chair-year {
   font-size: 1.3vw;
-  /* line-height: 1.3vw; */
+}
+
+.chair-year .line {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.chair-year .word {
+  transform: translateY(1.3vw);
+}
+
+.chair-info{
+  font-size: 1vw;
+}
+
+.chair-info .line{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.chair-info .word{
+  transform: translateY(1vw);
 }
 
 .first-row {
