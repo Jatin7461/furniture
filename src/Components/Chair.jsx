@@ -10,22 +10,13 @@ const Chair = (props) => {
     console.log(materials)
     const texture = useLoader(TextureLoader, 'gltf_embedded_4.png')
     const chairRef = useRef()
-    useEffect(() => {
-        const gui = new GUI()
-        gui.add(chairRef.current.rotation, 'x', 0, Math.PI * 2, 0.01)
-        gui.add(chairRef.current.rotation, 'y', 0, Math.PI * 2, 0.01)
-        gui.add(chairRef.current.rotation, 'z', 0, Math.PI * 2, 0.01)
-        return () => {
-            gui.destroy()
-        }
-    }, [])
 
     const clock = new Clock()
 
     useFrame((_, delta) => {
-        chairRef.current.rotation.x += 0.001
-        chairRef.current.rotation.y += 0.001
-        chairRef.current.rotation.z += 0.001
+        chairRef.current.rotation.x += 0.0025
+        chairRef.current.rotation.y += 0.0025
+        chairRef.current.rotation.z += 0.0025
     })
 
     window.addEventListener('scroll', () => {

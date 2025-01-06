@@ -57,7 +57,6 @@ function App() {
       scrollTrigger: {
         trigger: '.chair1 .second-row',
         start: 'bottom 90%',
-        markers: true
       }
     })
     gsap.to([chairName2.words, chairYear2.words, chairInfo2.words], {
