@@ -13,6 +13,10 @@ import Scene from './Components/Scene';
 import { ScrollTrigger } from 'gsap/all';
 function App() {
 
+  window.onbeforeunload = () => {
+    window.scrollTo(0, 0)
+  }
+
   const container: RefObject<HTMLDivElement> = React.createRef()
 
   useGSAP(() => {
