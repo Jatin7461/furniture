@@ -176,8 +176,8 @@ function App() {
         <Canvas>
           <Scene />
         </Canvas>
-        <Loader />
       </Suspense>
+      <Loader />
     </div>
   </div>
 }
