@@ -26,9 +26,9 @@ function App() {
 
   useGSAP(() => {
 
-    const firstHeading = new SplitType('.heading')
-    const middleText = new SplitType('.middleText')
-    const archiveText = new SplitType('.archive')
+    // const firstHeading = new SplitType('.heading')
+    // const middleText = new SplitType('.middleText')
+    // const archiveText = new SplitType('.archive')
     const thirdText = new SplitType('.thirdText')
     const studioText = new SplitType('.studio')
     const fourthLeftText = new SplitType('.left')
@@ -145,23 +145,23 @@ function App() {
       }
     })
 
-    gsap.to(firstHeading.words, {
-      translateY: 0,
-      duration: 1,
-      delay: 0.3
-    })
+    // gsap.to(firstHeading.words, {
+    //   translateY: 0,
+    //   duration: 1,
+    //   delay: 0.3
+    // })
 
-    gsap.to(archiveText.lines, {
-      translateY: 0,
-      duration: 1,
-      delay: 0.3
-    })
+    // gsap.to(archiveText.lines, {
+    //   translateY: 0,
+    //   duration: 1,
+    //   delay: 0.3
+    // })
 
-    gsap.to(middleText.words, {
-      translateY: 0,
-      duration: 1,
-      delay: 0.3
-    })
+    // gsap.to(middleText.words, {
+    //   translateY: 0,
+    //   duration: 1,
+    //   delay: 0.3
+    // })
 
   }, { scope: container })
 
