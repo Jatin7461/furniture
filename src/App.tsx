@@ -14,6 +14,7 @@ import { Canvas } from '@react-three/fiber';
 import Scene from './Components/Scene';
 import { ScrollTrigger } from 'gsap/all';
 import LoadingScreen from './Components/LoadingScreen';
+import { Loader } from '@react-three/drei';
 function App() {
 
   window.onbeforeunload = () => {
@@ -169,10 +170,13 @@ function App() {
     <Third />
     <Fourth />
     <div className="canvas">
-      <Suspense fallback={<LoadingScreen />}>
+      <Suspense
+      //  fallback={<LoadingScreen />}
+      >
         <Canvas>
           <Scene />
         </Canvas>
+        <Loader />
       </Suspense>
     </div>
   </div>
