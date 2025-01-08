@@ -6,11 +6,14 @@ import Second from './Components/Second';
 import Third from './Components/Third';
 import Fourth from './Components/Fourth';
 import { useGSAP } from '@gsap/react';
+import { Suspense } from "react"
+
 import gsap from 'gsap';
 import SplitType from 'split-type';
 import { Canvas } from '@react-three/fiber';
 import Scene from './Components/Scene';
 import { ScrollTrigger } from 'gsap/all';
+import LoadingScreen from './Components/LoadingScreen';
 function App() {
 
   window.onbeforeunload = () => {
@@ -166,9 +169,11 @@ function App() {
     <Third />
     <Fourth />
     <div className="canvas">
-      <Canvas>
-        <Scene />
-      </Canvas>
+      <Suspense fallback={<LoadingScreen />}>
+        <Canvas>
+          <Scene />
+        </Canvas>
+      </Suspense>
     </div>
   </div>
 }
