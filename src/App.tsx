@@ -170,13 +170,10 @@ function App() {
     <Third />
     <Fourth />
     <div className="canvas">
-      <Suspense
-       fallback={<LoadingScreen />}
-      >
+     
         <Canvas>
           <Scene />
         </Canvas>
-      </Suspense>
       {/* <Loader 
       // containerStyles={}
       /> */}
