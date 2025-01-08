@@ -21,6 +21,7 @@ function App() {
     window.scrollTo(0, 0)
   }
 
+
   const container: RefObject<HTMLDivElement> = React.createRef()
 
   useGSAP(() => {
@@ -170,13 +171,14 @@ function App() {
     <Third />
     <Fourth />
     <div className="canvas">
-     
-        <Canvas>
-          <Scene />
-        </Canvas>
+
+      <Canvas>
+        <Scene />
+      </Canvas>
       {/* <Loader 
       // containerStyles={}
       /> */}
+      <LoadingScreen />
     </div>
   </div>
 }
