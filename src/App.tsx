@@ -15,6 +15,7 @@ import Scene from './Components/Scene';
 import { ScrollTrigger } from 'gsap/all';
 import LoadingScreen from './Components/LoadingScreen';
 import { Loader } from '@react-three/drei';
+import ReactLenis from '@studio-freight/react-lenis';
 function App() {
 
   window.onbeforeunload = () => {
@@ -114,8 +115,9 @@ function App() {
       }
     })
 
-    gsap.to([fourthLeftText.words, fourthRightText.words], {
-      translateY: 0,
+    gsap.from([fourthLeftText.words, fourthRightText.words], {
+      // translateY: 0,
+      yPercent: 100,
       duration: 1,
       scrollTrigger: {
         trigger: '.fourth',
@@ -123,8 +125,9 @@ function App() {
       }
     })
 
-    gsap.to([thirdText.words], {
-      translateY: 0,
+    gsap.from([thirdText.words], {
+      // translateY: 0,
+      yPercent: 100,
       duration: 1,
       scrollTrigger: {
         trigger: '.thirdText',
@@ -165,22 +168,27 @@ function App() {
 
   }, { scope: container })
 
-  return <div ref={container} className="container">
-    <First />
-    <Second />
-    <Third />
-    <Fourth />
-    <div className="canvas">
 
-      <Canvas>
-        <Scene />
-      </Canvas>
-      {/* <Loader 
+  return (
+    <ReactLenis root>
+      <div ref={container} className="container">
+        <First />
+        <Second />
+        <Third />
+        <Fourth />
+        <div className="canvas">
+
+          <Canvas>
+            <Scene />
+          </Canvas>
+          {/* <Loader 
       // containerStyles={}
       /> */}
-      <LoadingScreen />
-    </div>
-  </div>
+          <LoadingScreen />
+        </div>
+      </div>
+    </ReactLenis>
+  )
 }
 
 export default App;

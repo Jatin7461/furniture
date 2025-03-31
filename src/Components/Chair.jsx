@@ -2,8 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useLoader, useFrame } from '@react-three/fiber'
 import { MeshStandardMaterial, TextureLoader, Clock } from 'three'
-import { useEffect } from 'react'
-import { GUI } from 'dat.gui'
+import ReactLenis from '@studio-freight/react-lenis'
 
 const Chair = (props) => {
     const { nodes, materials } = useGLTF('blackchair.glb')
@@ -25,7 +24,14 @@ const Chair = (props) => {
         chairRef.current.rotation.z += 0.015
     })
 
+    const width = window.screen.width
+    let scale = 1.5;
+    if (width <= 1000) {
+        scale = 1
+    }
+
     return (
+
         <group {...props} dispose={null}>
             <mesh
                 ref={chairRef}
@@ -33,11 +39,12 @@ const Chair = (props) => {
                 receiveShadow
                 geometry={nodes.model.geometry}
                 // material={materials.place_holder}
-                scale={1.5}
+                scale={scale}
                 rotation={[0.29, 0.29, 0]}
                 material={new MeshStandardMaterial({ map: texture })}
             />
         </group>
+
     )
 }
 

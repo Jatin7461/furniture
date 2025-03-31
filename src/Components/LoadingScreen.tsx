@@ -21,8 +21,9 @@ const LoadingScreen = () => {
         const firstHeading = new SplitType('.heading')
         const middleText = new SplitType('.middleText')
         const archiveText = new SplitType('.archive')
-        gsap.to(firstHeading.words, {
-            translateY: 0,
+        gsap.from(firstHeading.words, {
+            // translateY: 0,
+            yPercent: 100,
             duration: 1,
             delay: 1.3
         })
@@ -33,8 +34,8 @@ const LoadingScreen = () => {
             delay: 1.3
         })
 
-        gsap.to(middleText.words, {
-            translateY: 0,
+        gsap.from(middleText.words, {
+            yPercent: 100,
             duration: 1,
             delay: 1.3
         })
